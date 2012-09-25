@@ -1,11 +1,10 @@
 <?php
 namespace Arnm\CoreBundle\Entity;
 
-use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
-
-use Symfony\Component\Serializer\Serializer;
-
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+
+use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;

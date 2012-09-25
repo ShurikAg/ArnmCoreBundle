@@ -11,10 +11,9 @@
         }
     ],
     "autoload": {
-        "psr-0": { 
-			"Arnm": "vendor/"            
-        } 
+        "psr-0": { "Arnm\\CoreBundle": "" }
     },
+    "target-dir": "Arnm/CoreBundle",
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.1.*"

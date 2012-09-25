@@ -130,7 +130,7 @@
 			<arg value="--target" />
 			<arg path="${api-dir}" />
 			<arg value="--ignore" />
-			<arg value="*/vendor/*, */Tests/*, */Tests/*" />
+			<arg value="*/vendor/*, */Tests/*" />
 		</exec>
 	</target>
 
