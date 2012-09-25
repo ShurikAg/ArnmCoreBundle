@@ -1,0 +1,3 @@
+ArnmCoreBundle_dashboard:
+    pattern:  /araneum
+    defaults: { _controller: ArnmCoreBundle:Dashboard:index }

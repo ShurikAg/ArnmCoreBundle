@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	{% stylesheets
+	    '@ArnmCoreBundle/Resources/public/css/site.css'
+	%}
+	<link rel="stylesheet" href="{{ asset_url }}" />
+	{% endstylesheets %}
+{% endblock %}
+{% block javascripts %}
+	{% javascripts
+	    '@ArnmCoreBundle/Resources/public/js/jquery-1.7.1.min.js'
+	    '@ArnmCoreBundle/Resources/public/js/slides.min.jquery.js'
+	    '@ArnmCoreBundle/Resources/public/js/site.js'
+	%}
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
+
+{% block body %}
+	<div id="wrapper">
+		<div id="header">
+			<div id="top">
+				<img src="/images/logo.png" id="logo" />
+			</div>
+			<div class="separator"></div>
+			<div id="bottom">
+				{% render "MenuBundle:Widgets\\PlainMenu:renderMenu" with { 'menuCode': 'top-menu' } %}		
+			</div>
+		</div>
+		<div id="content">
+			{% block content %}{% endblock %}
+		</div>
+		<div id="footer">
+			<div id="copyright">
+				&copy; 2012 all right reserved
+			</div>
+			<div id="footer-nav">
+				{% render "MenuBundle:Widgets\\PlainMenu:renderMenu" with { 'menuCode': 'footer-menu' } %}	
+			</div>
+		</div>
+	</div>
+{% endblock %}

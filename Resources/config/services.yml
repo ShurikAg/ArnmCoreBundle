@@ -1,0 +1,7 @@
+parameters:
+#    arnm_core.example.class: Arnm\CoreBundle\Example
+
+services:
+#    arnm_core.example:
+#        class: %arnm_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

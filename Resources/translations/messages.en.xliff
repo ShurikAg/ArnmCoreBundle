@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>dashboard.content.test</source>
+                <target>This is dashboard content</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>default.form.action.back_to_list</source>
+                <target>Back to List</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>default.form.action.cancel</source>
+                <target>Cancel</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>default.form.action.reset</source>
+                <target>Reset</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>default.label.info</source>
+                <target>Info</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>default.label.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>default.label.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>default.form.action.save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>default.label.note</source>
+                <target>Note</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>default.label.change</source>
+                <target>Change</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>default.label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>default.form.action.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>default.form.action.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>default.label.id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>default.form.action.update</source>
+                <target>Update</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>default.form.action.create</source>
+                <target>Create</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
