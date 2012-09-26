@@ -2,7 +2,6 @@
 namespace Arnm\CoreBundle\Entity;
 
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-
 use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
@@ -34,6 +33,11 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
         return $this->encodeTo('xml');
     }
 
+    /**
+     * Converts the entity to array
+     *
+     * @return array
+     */
     public function toArray()
     {
         return $this->encodeTo('array');
@@ -64,7 +68,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
 
     //FIXME: Refator this shit out into separate class
     /**
-     * (non-PHPdoc)
+     * {@inheritdoc}
      * @see Symfony\Component\Serializer\Normalizer.NormalizableInterface::normalize()
      */
     public function normalize(NormalizerInterface $normalizer, $format = null)
@@ -96,6 +100,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      * Checks if a method's name is get.* and can be called without parameters.
      *
      * @param ReflectionMethod $method the method to check
+     *
      * @return Boolean whether the method is a getter.
      */
     private function isGetMethod(\ReflectionMethod $method)
@@ -103,21 +108,37 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
         return (0 === strpos($method->getName(), 'get') && 3 < strlen($method->getName()) && 0 === $method->getNumberOfRequiredParameters());
     }
 
+    /**
+     * {@inheritdoc}
+     * @see ArrayAccess::offsetExists()
+     */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
 
+    /**
+     * {@inheritdoc}
+     * @see ArrayAccess::offsetSet()
+     */
     public function offsetSet($offset, $value)
     {
         $this->$offset = $value;
     }
 
+    /**
+     * {@inheritdoc}
+     * @see ArrayAccess::offsetGet()
+     */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
 
+    /**
+     * {@inheritdoc}
+     * @see ArrayAccess::offsetUnset()
+     */
     public function offsetUnset($offset)
     {
         $this->$offset = null;
