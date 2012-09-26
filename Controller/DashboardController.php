@@ -10,8 +10,9 @@
 //TODO: Add proper license info
 namespace Arnm\CoreBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 /**
  * This controller is the main entry point to araneum (admin)
  *
@@ -21,6 +22,8 @@ class DashboardController extends Controller
 {
     /**
      * The main dashboard action
+     *
+     * @return Response
      */
     public function indexAction()
     {
