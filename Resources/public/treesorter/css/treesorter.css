@@ -1,9 +1,0 @@
-.template { display: none; }
-
-.sortable-tree { width: 400px; border: 3px solid #FFF; font-family: Arial, sans-serif; }
-.sortable-tree a { display: block; }
-.sortable-tree a .tree-actions { font-size: 12px; }
-.sortable-tree a .tree-actions span { padding: 0 3px; color: #99C; }
-.sortable-tree a .tree-actions span:hover { text-decoration: underline; color: #339; }
-.sortable-tree a .tree-actions span.delete { color: #F99; }
-.sortable-tree a .tree-actions span.delete:hover { color: #F00; }
