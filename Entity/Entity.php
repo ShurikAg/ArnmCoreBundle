@@ -59,7 +59,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
             'json' => new JsonEncoder()
         ));
 
-        if($format == 'array') {
+        if ($format == 'array') {
             return $serializer->normalize($this);
         }
 
@@ -78,14 +78,14 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
 
         $data = array();
         foreach ($reflectionMethods as $method) {
-            if($this->isGetMethod($method)) {
+            if ($this->isGetMethod($method)) {
                 $name = strtolower(substr($method->getName(), 3));
-                if(! $reflectionObject->hasProperty($name)) {
+                if (! $reflectionObject->hasProperty($name)) {
                     continue;
                 }
 
                 $value = $method->invoke($this);
-                if(! is_scalar($value) && $value instanceof Entity) {
+                if (! is_scalar($value) && $value instanceof Entity) {
                     $value = $value->normalize($normalizer, $format);
                 }
 
