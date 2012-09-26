@@ -21,7 +21,7 @@
 	
 	<property name="artifacts" value="${basedir}/build/artifacts"/>
 
-	<property name="source" value="${basedir}/" />
+	<property name="source" value="${basedir}" />
 
 	<property name="api-dir" value="${artifacts}/api" />
 	<property name="code-browser-dir" value="${artifacts}/code-browser" />
@@ -97,7 +97,7 @@
 			<arg value="--reportfile" />
 			<arg value="${logs-dir}/pmd.xml" />
 			<arg value="--exclude" />
-			<arg value="vendor,Tests" />
+			<arg value="vendor,Tests,Resources" />
 		</exec>
 	</target>
 
@@ -107,7 +107,7 @@
 			<arg value="--report=checkstyle" />
 			<arg value="--standard=Symfony2" />
 			<arg value="--report-file=${logs-dir}/checkstyle.xml" />
-			<arg value="--ignore=vendor/*,Tests/*" />
+			<arg value="--ignore=vendor,Resources" />
 			<arg path="${source}" />
 		</exec>
 	</target>
