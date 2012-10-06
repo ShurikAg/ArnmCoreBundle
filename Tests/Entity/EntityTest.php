@@ -55,6 +55,9 @@ class EntityTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('test1', $entity['paramA']);
         $this->assertEquals('test2', $entity['paramB']);
+        $this->assertTrue(isset($entity['paramB']));
+        unset($entity['paramB']);
+        $this->assertFalse(isset($entity['paramB']));
     }
 
     public function testToArray()
