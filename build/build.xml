@@ -107,7 +107,7 @@
 			<arg value="--report=checkstyle" />
 			<arg value="--standard=Symfony2" />
 			<arg value="--report-file=${logs-dir}/checkstyle.xml" />
-			<arg value="--ignore=vendor,Resources" />
+			<arg value="--ignore=vendor,Resources,Tests" />
 			<arg path="${source}" />
 		</exec>
 	</target>
