@@ -63,7 +63,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
             return $serializer->normalize($this);
         }
 
-        return $serializer->encode($this, $format);
+        return $serializer->serialize($this, $format);
     }
 
     //FIXME: Refator this shit out into separate class
@@ -79,11 +79,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
         $data = array();
         foreach ($reflectionMethods as $method) {
             if ($this->isGetMethod($method)) {
-                $name = strtolower(substr($method->getName(), 3));
-                if (! $reflectionObject->hasProperty($name)) {
-                    continue;
-                }
-
+                $name = lcfirst(substr($method->getName(), 3));
                 $value = $method->invoke($this);
                 if (! is_scalar($value) && $value instanceof Entity) {
                     $value = $value->normalize($normalizer, $format);

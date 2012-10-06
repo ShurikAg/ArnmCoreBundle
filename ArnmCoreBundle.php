@@ -18,6 +18,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * ArnmCoreBindle specifics
  *
  * @author Alex Agulyansky <alex@iibspro.com>
+ *
+ * @codeCoverageIgnore
  */
 class ArnmCoreBundle extends Bundle
 {
