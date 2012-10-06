@@ -13,6 +13,8 @@ class ArnmAjaxController extends ArnmController
      * Validates that we met all the restrictions related to this controller
      *
      * @throws NotFoundHttpException
+     *
+     * @codeCoverageIgnore
      */
     protected function validateRequest()
     {
@@ -28,6 +30,8 @@ class ArnmAjaxController extends ArnmController
      * @param array $data
      *
      * @return Response
+     *
+     * @codeCoverageIgnore
      */
     protected function createResponse(array $data = array())
     {

@@ -16,6 +16,8 @@ class ArnmController extends Controller
      * Gets session object
      *
      * @return Symfony\Component\HttpFoundation\Session
+     *
+     * @codeCoverageIgnore
      */
     public function getSession()
     {
@@ -25,6 +27,8 @@ class ArnmController extends Controller
      * Gets entity manager
      *
      * @return Doctrine\ORM\EntityManager
+     *
+     * @codeCoverageIgnore
      */
     public function getEntityManager()
     {
