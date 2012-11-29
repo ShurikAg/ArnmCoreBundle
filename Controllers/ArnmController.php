@@ -34,4 +34,14 @@ class ArnmController extends Controller
     {
         return $this->getDoctrine()->getEntityManager();
     }
+
+    /**
+     * Gets web dir
+     *
+     * @return string
+     */
+    protected function getWebDir()
+    {
+        return $this->get('kernel')->getRootDir() . '/../web/';
+    }
 }
