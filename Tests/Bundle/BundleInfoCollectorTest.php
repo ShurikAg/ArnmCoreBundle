@@ -3,17 +3,11 @@ namespace Arnm\CoreBundle\Tests\Bundle;
 /**
  * BundleInfoCollectior test case.
  */
-use Arnm\CoreBundle\Bundle\BundleInfo;
-
+use Arnm\CoreBundle\Bundle\BundleInfoInterface;
 use Arnm\CoreBundle\Bundle\BundleInfoCollector;
 
-class InfoMock extends BundleInfo
+class InfoMock implements BundleInfoInterface
 {
-
-	public function getKey()
-	{
-		return 'the-key';
-	}
 }
 
 class BundleInfoCollectorTest extends \PHPUnit_Framework_TestCase
@@ -26,10 +20,12 @@ class BundleInfoCollectorTest extends \PHPUnit_Framework_TestCase
     {
         $collector = new BundleInfoCollector();
 
-        $info = new InfoMock( $collector);
+        $info = new InfoMock();
+        $return = $collector->register($info);
 
+        $this->assertTrue($return instanceof BundleInfoCollector);
         $this->assertEquals(1, count($collector->getBundleInfos()));
-        $this->assertEquals($info, $collector->getBundleInfo('the-key'));
+        $this->assertEquals(array($info), $collector->getBundleInfos());
     }
 
 }

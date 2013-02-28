@@ -36,25 +36,9 @@ class BundleInfoCollector implements BundleInfoCollectorInterface
      */
     public function addBundleInfo(BundleInfoInterface $bundleInfo)
     {
-        $this->bundles[$bundleInfo->getKey()] = $bundleInfo;
+        $this->bundles[] = $bundleInfo;
 
         return $this;
-    }
-
-    /**
-     * Gets bundle info by key
-     *
-     * @param string $key
-     *
-     * @return BundleInfoInterface
-     */
-    public function getBundleInfo($key)
-    {
-        if (array_key_exists($key, $this->bundles) && $this->bundles[$key] instanceof BundleInfoInterface) {
-            return $this->bundles[$key];
-        }
-
-        return null;
     }
 
     /**

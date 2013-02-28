@@ -12,8 +12,10 @@
 
 namespace Arnm\CoreBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Arnm\CoreBundle\DependencyInjection\BundleCompilerPass;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * ArnmCoreBindle specifics
  *
@@ -23,4 +25,11 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class ArnmCoreBundle extends Bundle
 {
+
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+
+        $container->addCompilerPass(new BundleCompilerPass());
+    }
 }
