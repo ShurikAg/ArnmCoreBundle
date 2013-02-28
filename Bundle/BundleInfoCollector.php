@@ -9,12 +9,12 @@ namespace Arnm\CoreBundle\Bundle;
  */
 class BundleInfoCollector implements BundleInfoCollectorInterface
 {
-	/**
-	 * Array of Bundle info pbjects of registered bundles
-	 *
-	 * @var array
-	 */
-	private $bundles = array();
+    /**
+     * Array of Bundle info pbjects of registered bundles
+     *
+     * @var array
+     */
+    private $bundles = array();
 
     /**
      * {@inheritdoc}
@@ -22,9 +22,9 @@ class BundleInfoCollector implements BundleInfoCollectorInterface
      */
     public function register(BundleInfoInterface $bundleInfo)
     {
-		$this->addBundleInfo($bundleInfo);
+        $this->addBundleInfo($bundleInfo);
 
-		return $this;
+        return $this;
     }
 
     /**
@@ -36,9 +36,9 @@ class BundleInfoCollector implements BundleInfoCollectorInterface
      */
     public function addBundleInfo(BundleInfoInterface $bundleInfo)
     {
-    	$this->bundles[$bundleInfo->getKey()] = $bundleInfo;
+        $this->bundles[$bundleInfo->getKey()] = $bundleInfo;
 
-    	return $this;
+        return $this;
     }
 
     /**
@@ -50,21 +50,20 @@ class BundleInfoCollector implements BundleInfoCollectorInterface
      */
     public function getBundleInfo($key)
     {
-    	if(array_key_exists($key, $this->bundles) && $this->bundles[$key] instanceof BundleInfoInterface)
-    	{
-    		return $this->bundles[$key];
-    	}
+        if (array_key_exists($key, $this->bundles) && $this->bundles[$key] instanceof BundleInfoInterface) {
+            return $this->bundles[$key];
+        }
 
-    	return null;
+        return null;
     }
 
     /**
      * Gets the entire list of all registered budle info objects
      *
-     *  @return array
+     * @return array
      */
     public function getBundleInfos()
     {
-    	return $this->bundles;
+        return $this->bundles;
     }
 }

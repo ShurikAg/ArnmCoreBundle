@@ -8,7 +8,7 @@ namespace Arnm\CoreBundle\Bundle;
  */
 interface BundleInfoInterface
 {
-    
+
     /**
      * Gets a unique key for this bundle to identified by
      *
