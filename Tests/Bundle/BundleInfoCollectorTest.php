@@ -9,6 +9,11 @@ use Arnm\CoreBundle\Bundle\BundleInfoCollector;
 
 class InfoMock extends BundleInfo
 {
+
+	public function getKey()
+	{
+		return 'the-key';
+	}
 }
 
 class BundleInfoCollectorTest extends \PHPUnit_Framework_TestCase
@@ -21,7 +26,7 @@ class BundleInfoCollectorTest extends \PHPUnit_Framework_TestCase
     {
         $collector = new BundleInfoCollector();
 
-        $info = new InfoMock('the-key', $collector);
+        $info = new InfoMock( $collector);
 
         $this->assertEquals(1, count($collector->getBundleInfos()));
         $this->assertEquals($info, $collector->getBundleInfo('the-key'));
