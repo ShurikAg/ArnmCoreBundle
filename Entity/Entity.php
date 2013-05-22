@@ -1,10 +1,11 @@
 <?php
 namespace Arnm\CoreBundle\Entity;
 
+use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
+
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\Normalizer\CustomNormalizer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 /**
@@ -71,7 +72,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      * {@inheritdoc}
      * @see Symfony\Component\Serializer\Normalizer.NormalizableInterface::normalize()
      */
-    public function normalize(NormalizerInterface $normalizer, $format = null)
+    public function normalize(NormalizerInterface $normalizer, $format = null, array $context = array())
     {
         $reflectionObject = new \ReflectionObject($this);
         $reflectionMethods = $reflectionObject->getMethods(\ReflectionMethod::IS_PUBLIC);
