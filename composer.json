@@ -1,7 +1,7 @@
 {
     "name": "iibs/arnm-core",
     "description": "Core bundle of Araneum",
-    "version": "1.0.0-beta",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Alex Agulyansky",
@@ -16,6 +16,6 @@
     "target-dir": "Arnm/CoreBundle",
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.2.*"
+        "symfony/symfony": "2.4.*"
     }
 }
