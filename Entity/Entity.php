@@ -113,7 +113,16 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
     {
         $method = 'get'.$offset;
 
-        return method_exists($this, $method);
+        if(!method_exists($this, $method)) {
+            return false;
+        }
+
+        $value = $this->$method();
+        if(is_null($value)) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
