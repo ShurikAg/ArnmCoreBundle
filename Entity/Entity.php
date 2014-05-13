@@ -111,7 +111,9 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      */
     public function offsetExists($offset)
     {
-        return isset($this->$offset);
+        $method = 'get'.$offset;
+
+        return method_exists($this, $method);
     }
 
     /**
@@ -120,7 +122,8 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      */
     public function offsetSet($offset, $value)
     {
-        $this->$offset = $value;
+        $method = 'set'.$offset;
+        $this->$method($value);
     }
 
     /**
@@ -129,7 +132,9 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      */
     public function offsetGet($offset)
     {
-        return $this->$offset;
+        $method = 'get'.$offset;
+
+        return $this->$method();
     }
 
     /**
@@ -138,6 +143,7 @@ abstract class Entity implements \ArrayAccess, NormalizableInterface
      */
     public function offsetUnset($offset)
     {
-        $this->$offset = null;
+        $method = 'set'.$offset;
+        $this->$method(null);
     }
 }
