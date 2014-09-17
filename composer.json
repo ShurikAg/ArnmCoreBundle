@@ -1,21 +1,21 @@
 {
-    "name": "iibs/arnm-core",
-    "description": "Core bundle of Araneum",
-    "version": "1.0.0",
-    "authors": [
-        {
-            "name": "Alex Agulyansky",
-            "email": "alex@iibspro.com",
-            "homepage": "http://www.iibspro.com",
-            "role": "Dev Lead"
-        }
-    ],
-    "autoload": {
-        "psr-0": { "Arnm\\CoreBundle": "" }
-    },
-    "target-dir": "Arnm/CoreBundle",
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.4.*"
+  "name" : "iibs/arnm-core",
+  "description" : "Core bundle of Araneum",
+  "version" : "1.0.1",
+  "require" : {
+    "php" : ">=5.3.3",
+    "symfony/symfony" : "2.5.*"
+  },
+  "target-dir" : "Arnm/CoreBundle",
+  "authors" : [ {
+    "name" : "Alex Agulyansky",
+    "email" : "alex@iibspro.com",
+    "homepage" : "http://www.iibspro.com",
+    "role" : "Dev Lead"
+  } ],
+  "autoload" : {
+    "psr-0" : {
+      "Arnm\\CoreBundle" : ""
     }
+  }
 }
