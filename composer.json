@@ -1,10 +1,10 @@
 {
   "name" : "iibs/arnm-core",
   "description" : "Core bundle of Araneum",
-  "version" : "1.0.1",
+  "version" : "1.0.2",
   "require" : {
-    "php" : ">=5.3.3",
-    "symfony/symfony" : "2.5.*"
+    "php" : ">=5.3.9",
+    "symfony/symfony" : "2.7.*"
   },
   "target-dir" : "Arnm/CoreBundle",
   "authors" : [ {
