@@ -2,6 +2,7 @@
 namespace Arnm\CoreBundle\Controllers;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 /**
  * Controller that provides a baseline functionality for any ajax driven fuctionality
  *
@@ -9,6 +10,25 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ArnmAjaxController extends ArnmController
 {
+    /**
+     * Extracts an array based on the json object in body
+     *
+     * @return array
+     */
+    protected function getArrayFromJsonContent(Request $request)
+    {
+        $content = $request->getContent();
+        if (empty($content)) {
+            throw new BadRequestHttpException("Empty payload!");
+        }
+
+        $data = json_decode($content, true);
+        if (!is_array($data)) {
+            throw new BadRequestHttpException("Payload is not parsable!");
+        }
+
+        return $data;
+    }
     /**
      * Validates that we met all the restrictions related to this controller
      *
